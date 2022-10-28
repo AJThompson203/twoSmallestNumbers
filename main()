@@ -1,0 +1,43 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+   vector<int> userInt;  
+   int numInt;  
+   int list = "4 1 2 -31 15";
+   int i;
+   int smallestInt;
+   int secondSmallest;
+   
+   // populating inputs into vector
+   cin >> list;
+   for (int i = 0; i < list; ++i) {
+      cin >> numInt;
+      userInt.push_back(numInt);
+   } 
+   
+   //finding the smallest number in vector
+   smallestInt = userInt.at(0);   
+   for (i=0; i < userInt.size(); ++i) {
+      if (userInt.at(i) < smallestInt) {
+         smallestInt = userInt.at(i);
+         }
+   }
+   //finding second smallest number in vector
+   secondSmallest = userInt.at(1); // second smallest = 1
+   for (i=0; i < userInt.size(); ++i) { 
+      if (userInt.at(i) > smallestInt && secondSmallest > userInt.at(i)) {
+         secondSmallest = userInt.at(i);
+         }
+      }
+
+      
+   cout << smallestInt << " " << secondSmallest << endl;
+   //cout << userInt.at(0);
+   
+   return 0;
+}
+
+// 5 1 8 91 23 7
+// 5 10 5 3 21 2
